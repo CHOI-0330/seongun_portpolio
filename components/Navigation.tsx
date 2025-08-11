@@ -8,6 +8,7 @@ export function Navigation() {
   const navItems = [
     { name: "自己紹介", href: "#about" },
     { name: "自己PR", href: "#selfpr" },
+    { name: "インターン", href: "#intern" },
     { name: "経歴", href: "#experience" },
     { name: "プロジェクト", href: "#projects" },
     { name: "お問い合わせ", href: "#contact" },

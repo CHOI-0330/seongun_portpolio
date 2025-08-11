@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { getProjectById } from "./data/projectsData";
 import { SelfPR } from "./components/SelfPR";
+import { Internship } from "./components/Internship";
 
 type PageType = 'home' | 'project-detail';
 
@@ -37,6 +38,7 @@ export default function App() {
             <Hero />
             <About />
             <SelfPR />
+            <Internship />
             <Experience />
             <Projects onProjectClick={handleProjectClick} />
             <Contact />
