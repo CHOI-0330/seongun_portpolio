@@ -10,7 +10,7 @@ export function Hero() {
         <div className="mb-8">
           <div className="relative mx-auto w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-border shadow-2xl">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1519651459912-3c00c1a9f1dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGJsYWNrJTIwd2hpdGV8ZW58MXx8fHwxNzU0ODkxNDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
               alt="プロフィール写真"
               className="w-full h-full object-cover filter grayscale"
             />
@@ -20,24 +20,27 @@ export function Hero() {
         {/* Introduction */}
         <div className="mb-8">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium mb-6 text-foreground">
-            はじめまして、<span className="text-primary">田中開発太郎</span>と申します
+            はじめまして、<span className="text-primary">崔 成雲</span>です
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            革新的なアイデアを現実に変えるフルスタックエンジニアです。
-            ベンチャー企業のチャレンジ精神で新しい技術とソリューションを探求し、
-            ユーザーエクスペリエンスを最優先に考えています。
+            TypeScript / React / Next.js を中心に、データ活用とUI/UXに強みを持つエンジニア志望の学生です。
+            企画から実装、チームを巻き込む推進力まで一貫して成果を出すことを目指しています。
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button size="lg" className="px-8 py-3 bg-primary hover:bg-primary/90">
-            <Mail className="w-4 h-4 mr-2" />
-            お問い合わせ
+          <Button size="lg" className="px-8 py-3 bg-primary hover:bg-primary/90" asChild>
+            <a href="mailto:choi.syukatu0330@gmail.com">
+              <Mail className="w-4 h-4 mr-2" />
+              メールで連絡
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-3">
-            <Github className="w-4 h-4 mr-2" />
-            GitHub を見る
+          <Button variant="outline" size="lg" className="px-8 py-3" asChild>
+            <a href="https://github.com/CHOI-0330" target="_blank" rel="noopener noreferrer">
+              <Github className="w-4 h-4 mr-2" />
+              GitHub を見る
+            </a>
           </Button>
         </div>
 

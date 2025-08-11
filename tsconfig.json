@@ -11,7 +11,7 @@
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "jsx": "react-jsx",
-    "types": []
+    "types": ["./src/figma-aliases"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "node_modules"]

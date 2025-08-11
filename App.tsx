@@ -8,6 +8,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { getProjectById } from "./data/projectsData";
+import { SelfPR } from "./components/SelfPR";
 
 type PageType = 'home' | 'project-detail';
 
@@ -35,6 +36,7 @@ export default function App() {
           <main>
             <Hero />
             <About />
+            <SelfPR />
             <Experience />
             <Projects onProjectClick={handleProjectClick} />
             <Contact />

@@ -7,6 +7,7 @@ export function Navigation() {
 
   const navItems = [
     { name: "自己紹介", href: "#about" },
+    { name: "自己PR", href: "#selfpr" },
     { name: "経歴", href: "#experience" },
     { name: "プロジェクト", href: "#projects" },
     { name: "お問い合わせ", href: "#contact" },
@@ -18,7 +19,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-foreground font-medium">Portfolio</h1>
+            <h1 className="text-foreground font-medium">崔 成雲</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -34,7 +35,7 @@ export function Navigation() {
                 </a>
               ))}
               <a
-                href="https://github.com"
+                href="https://github.com/CHOI-0330"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -73,7 +74,7 @@ export function Navigation() {
               </a>
             ))}
             <a
-              href="https://github.com"
+              href="https://github.com/CHOI-0330"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground flex items-center px-3 py-2 text-base font-medium transition-colors duration-200"

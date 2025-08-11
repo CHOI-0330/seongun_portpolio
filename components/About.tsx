@@ -4,30 +4,30 @@ import { Code, Lightbulb, Target, Users } from "lucide-react";
 
 export function About() {
   const skills = [
-    "React", "Next.js", "TypeScript", "Node.js", "Python", 
-    "AWS", "Docker", "GraphQL", "PostgreSQL", "MongoDB"
+    "TypeScript", "React", "Next.js", "Tailwind CSS", "Firebase",
+    "JavaScript", "Python", "C", "WebSocket", "TensorFlow"
   ];
 
   const values = [
     {
       icon: <Lightbulb className="w-6 h-6" />,
-      title: "イノベーション追求",
-      description: "新しい技術と方法論を積極的に探求し、起業家精神で問題を解決いたします。"
-    },
-    {
-      icon: <Code className="w-6 h-6" />,
-      title: "技術力",
-      description: "最新の技術スタックを活用して、スケーラブルで効率的なソリューションを構築いたします。"
+      title: "粘り強さ",
+      description: "困難な状況でも学びを止めず、目標達成まで主体的に取り組みます。"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "チームワーク重視",
-      description: "チームとの円滑なコミュニケーションと協業を通じて、より良い成果物を作り上げます。"
+      title: "巻き込み力",
+      description: "自治体や企業、チームを巻き込み、プロジェクトを推進します。"
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: "目標志向",
-      description: "明確な目標設定と体系的なアプローチで、プロジェクトを成功に導きます。"
+      title: "実行力・リーダーシップ",
+      description: "未知の領域にも挑戦し、短期間で成果を出す推進力があります。"
+    },
+    {
+      icon: <Code className="w-6 h-6" />,
+      title: "技術志向",
+      description: "UI/UXとデータ活用を重視し、価値ある体験を設計・実装します。"
     }
   ];
 
@@ -40,9 +40,9 @@ export function About() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            ベンチャー企業で5年間、様々なプロジェクトを経験しながら成長してまいりました。
-            急速に変化する環境での適応力と問題解決能力を身につけ、
-            スタートアップのチャレンジ精神で新しい技術への情熱を持っています。
+            山口大学 電気電子工学科（2026年卒見込み）。TypeScript / React / Next.js を中心に学び、
+            企画から実装、チームを巻き込む推進まで一貫して取り組んできました。志望職種はエンジニア職・総合職、
+            興味領域はシステム/ITコンサル、事業開発、フロントエンドです。
           </p>
         </div>
 

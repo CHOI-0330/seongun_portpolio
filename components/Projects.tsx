@@ -3,41 +3,15 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { projectsData } from "../data/projectsData";
+import type React from "react";
 
 interface ProjectsProps {
   onProjectClick: (projectId: string) => void;
 }
 
 export function Projects({ onProjectClick }: ProjectsProps) {
-  const projects = [
-    {
-      id: "ecommerce-platform",
-      title: "ECプラットフォーム",
-      description: "ReactとNode.jsを活用したフルスタック電子商取引プラットフォーム。リアルタイム決済システムと管理者ダッシュボードを構築いたしました。",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    },
-    {
-      id: "ai-chatbot",
-      title: "AIチャットボットサービス",
-      description: "OpenAI APIを活用したカスタマーサービス用チャットボット。自然言語処理により90%以上のお問い合わせを自動で解決いたします。",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a",
-      technologies: ["Python", "FastAPI", "OpenAI", "React"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    },
-    {
-      id: "collaboration-tool",
-      title: "リアルタイム協業ツール",
-      description: "WebSocketを利用したリアルタイム文書編集・協業プラットフォーム。複数ユーザーの同時編集とバージョン管理機能を提供いたします。",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
-      technologies: ["Next.js", "WebSocket", "MongoDB", "Docker"],
-      github: "https://github.com",
-      demo: "https://demo.com"
-    }
-  ];
+  const projects = projectsData;
 
   return (
     <section id="projects" className="py-20 bg-background">
@@ -93,27 +67,31 @@ export function Projects({ onProjectClick }: ProjectsProps) {
                 </div>
                 
                 <div className="flex gap-3">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    asChild
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      コード
-                    </a>
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    asChild
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      デモ
-                    </a>
-                  </Button>
+                  {project.github && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => e.stopPropagation()}
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        コード
+                      </a>
+                    </Button>
+                  )}
+                  {project.demo && (
+                    <Button 
+                      size="sm" 
+                      asChild
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => e.stopPropagation()}
+                    >
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        デモ
+                      </a>
+                    </Button>
+                  )}
                 </div>
 
                 <div className="mt-4 text-right">

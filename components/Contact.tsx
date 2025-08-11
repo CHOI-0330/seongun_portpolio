@@ -7,19 +7,19 @@ export function Contact() {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "メール",
-      value: "developer@example.com",
-      href: "mailto:developer@example.com"
+      value: "choi.syukatu0330@gmail.com",
+      href: "mailto:choi.syukatu0330@gmail.com"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "電話",
-      value: "+81 90-1234-5678",
-      href: "tel:+819012345678"
+      value: "090-3816-8959",
+      href: "tel:+819038168959"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "所在地",
-      value: "東京, 日本",
+      value: "山口県, 日本",
       href: null
     }
   ];
@@ -28,7 +28,7 @@ export function Contact() {
     {
       icon: <Github className="w-5 h-5" />,
       name: "GitHub",
-      href: "https://github.com"
+      href: "https://github.com/CHOI-0330"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
@@ -42,7 +42,7 @@ export function Contact() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-medium mb-4 text-foreground">
-            お問い合わせ
+            お問い合わせ / 基本情報
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -100,6 +100,18 @@ export function Contact() {
                   ))}
                 </div>
               </div>
+
+              <div className="pt-6 border-t border-border">
+                <p className="font-medium text-foreground mb-4">基本情報</p>
+                <div className="grid grid-cols-1 gap-3 text-sm text-muted-foreground">
+                  <div>性別：男性</div>
+                  <div>生年月日：2000年3月30日</div>
+                  <div>志望職種：エンジニア職 / 総合職</div>
+                  <div>勤務地：こだわらない</div>
+                  <div>企業選びの軸：成長できる環境</div>
+                  <div>学歴：山口大学 電気電子工学科（卒業見込み 2026）</div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
@@ -119,7 +131,7 @@ export function Contact() {
                 className="w-full"
                 asChild
               >
-                <a href="mailto:developer@example.com">
+                <a href="mailto:choi.syukatu0330@gmail.com">
                   <Mail className="w-4 h-4 mr-2" />
                   メールを送る
                 </a>
