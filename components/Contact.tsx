@@ -13,13 +13,13 @@ export function Contact() {
     {
       icon: <Phone className="w-5 h-5" />,
       title: "電話",
-      value: "090-3816-8959",
+      value: "09038168959",
       href: "tel:+819038168959"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "所在地",
-      value: "山口県, 日本",
+      value: "山口県",
       href: null
     }
   ];
@@ -109,6 +109,7 @@ export function Contact() {
                   <div>志望職種：エンジニア職 / 総合職</div>
                   <div>勤務地：こだわらない</div>
                   <div>企業選びの軸：成長できる環境</div>
+                  <div>企業規模：こだわらない</div>
                   <div>学歴：山口大学 電気電子工学科（卒業見込み 2026）</div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ export function Hero() {
         <div className="mb-8">
           <div className="relative mx-auto w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-border shadow-2xl">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+              src="/img/profile.jpg"
               alt="プロフィール写真"
               className="w-full h-full object-cover filter grayscale"
             />
@@ -20,7 +20,7 @@ export function Hero() {
         {/* Introduction */}
         <div className="mb-8">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium mb-6 text-foreground">
-            はじめまして、<span className="text-primary">崔 成雲</span>です
+            はじめまして、<span className="text-primary">CHOI SEONGUN</span>です
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
             TypeScript / React / Next.js を中心に、データ活用とUI/UXに強みを持つエンジニア志望の学生です。

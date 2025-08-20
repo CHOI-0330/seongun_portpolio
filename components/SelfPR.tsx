@@ -66,7 +66,7 @@ export function SelfPR() {
                   <li>SIer・ソフト開発・システム運用</li>
                   <li>シンクタンク</li>
                   <li>コンサルティングファーム</li>
-                  <li>金融（FinTech・仮想通貨含む）</li>
+                  <li>金融（銀行・証券・保険・カード・リース・FinTech・仮想通貨）</li>
                 </ul>
               </div>
               <div>
@@ -96,6 +96,7 @@ export function SelfPR() {
                 <li>インターン・アルバイトでの実務開発、半年以上の長期経験</li>
                 <li>勉強会・イベント・ハッカソン参加</li>
                 <li>Webサービス・アプリの公開経験</li>
+                <li>ゲームを制作したことがある</li>
                 <li>GitHub 利用</li>
                 <li>学校の授業でのプログラミング経験</li>
               </ul>
@@ -152,13 +153,13 @@ export function SelfPR() {
                   <li>
                     発表資料（1）：
                     <a className="text-primary underline" href="https://www.canva.com/design/DAGuyCWg7P4/XmDmRaSo0zCu4s7NV_AEtg/view?utm_content=DAGuyCWg7P4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h28c0efef8c" target="_blank" rel="noopener noreferrer">
-                      Canva Link
+                      Canva リンク
                     </a>
                   </li>
                   <li>
                     発表資料（2）：
                     <a className="text-primary underline" href="https://www.canva.com/design/DAGuyGrDy2c/wt8gXK6HE7ML7uSCSBSN1w/view?utm_content=DAGuyGrDy2c&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8811aa1556" target="_blank" rel="noopener noreferrer">
-                      Canva Link
+                      Canva リンク
                     </a>
                   </li>
                 </ul>

@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Internship() {
   return (
@@ -9,11 +10,18 @@ export function Internship() {
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
-        <Card className="bg-background border-border">
+        <Card className="bg-background border-border overflow-hidden">
           <CardHeader>
             <CardTitle className="text-foreground">ドボクリエイト株式会社（半年以上）</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="-mt-4 -mx-4 mb-6">
+              <ImageWithFallback
+                src="/img/intern/main.jpg"
+                alt="インターン写真"
+                className="w-full h-56 md:h-72 object-cover"
+              />
+            </div>
             <div>
               <p className="text-foreground font-medium mb-2">学内ベンチャー企業における土木業界DXへの挑戦</p>
               <p>

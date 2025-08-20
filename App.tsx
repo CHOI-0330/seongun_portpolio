@@ -35,12 +35,12 @@ export default function App() {
         <>
           <Navigation />
           <main>
+            <Projects onProjectClick={handleProjectClick} />
             <Hero />
             <About />
             <SelfPR />
             <Internship />
             <Experience />
-            <Projects onProjectClick={handleProjectClick} />
             <Contact />
           </main>
           <Footer />

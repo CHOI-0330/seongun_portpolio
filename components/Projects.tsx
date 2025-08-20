@@ -33,11 +33,11 @@ export function Projects({ onProjectClick }: ProjectsProps) {
               className="overflow-hidden hover:shadow-xl transition-all duration-300 bg-card border-border group cursor-pointer"
               onClick={() => onProjectClick(project.id)}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden h-48 bg-card flex items-center justify-center">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="max-h-full max-w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

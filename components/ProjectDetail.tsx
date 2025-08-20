@@ -4,6 +4,7 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { ArrowLeft, Github, ExternalLink, Calendar, Users, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface ProjectDetailProps {
   project: {
@@ -29,6 +30,69 @@ interface ProjectDetailProps {
 }
 
 export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
+  const [autoScreenshots, setAutoScreenshots] = useState<string[]>([]);
+
+  const folderPath = useMemo(() => {
+    // Derive folder from project.image like /img/projects/<id>/main.ext
+    const lastSlash = project.image.lastIndexOf("/");
+    return lastSlash > -1 ? project.image.slice(0, lastSlash) : "";
+  }, [project.image]);
+
+  useEffect(() => {
+    // If explicit screenshots exist, skip auto-detection
+    if (project.screenshots && project.screenshots.length > 0) {
+      setAutoScreenshots([]);
+      return;
+    }
+
+    // Try common filename patterns: 1..12, shot-*, sub-*, image-*
+    const baseNames = [
+      ...Array.from({ length: 12 }, (_, i) => String(i + 1)),
+      ...Array.from({ length: 12 }, (_, i) => `shot-${i + 1}`),
+      ...Array.from({ length: 12 }, (_, i) => `sub-${i + 1}`),
+      ...Array.from({ length: 12 }, (_, i) => `image-${i + 1}`),
+    ];
+    const exts = ["jpg", "jpeg", "png", "webp"]; // Try common web image types
+
+    let isMounted = true;
+    const found: string[] = [];
+    const controllers: AbortController[] = [];
+
+    const checkUrl = (url: string) =>
+      new Promise<boolean>((resolve) => {
+        const img = new Image();
+        const onLoad = () => resolve(true);
+        const onError = () => resolve(false);
+        img.onload = onLoad;
+        img.onerror = onError;
+        img.src = url;
+      });
+
+    (async () => {
+      for (const name of baseNames) {
+        for (const ext of exts) {
+          const url = `${folderPath}/${name}.${ext}`;
+          if (url === project.image) continue; // skip main if same
+          // eslint-disable-next-line no-await-in-loop
+          const ok = await checkUrl(url);
+          if (ok) {
+            found.push(url);
+          }
+        }
+      }
+      if (isMounted) setAutoScreenshots(found);
+    })();
+
+    return () => {
+      isMounted = false;
+      controllers.forEach((c) => c.abort());
+    };
+  }, [folderPath, project.image, project.screenshots]);
+
+  const screenshotsToShow = (project.screenshots && project.screenshots.length > 0)
+    ? project.screenshots
+    : autoScreenshots;
+
   return (
     <div className="min-h-screen bg-background pt-20">
       {/* Back Navigation */}
@@ -48,11 +112,11 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Project Header */}
         <div className="mb-12">
-          <div className="mb-6">
+          <div className="mb-6 bg-card rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-64 md:h-80">
             <ImageWithFallback
               src={project.image}
               alt={project.title}
-              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+              className="max-h-full max-w-full object-contain p-4"
             />
           </div>
           
@@ -190,17 +254,21 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
             <CardTitle>スクリーンショット</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.screenshots.map((screenshot, index) => (
-                <div key={index} className="rounded-lg overflow-hidden shadow-md">
-                  <ImageWithFallback
-                    src={screenshot}
-                    alt={`${project.title} スクリーンショット ${index + 1}`}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            {screenshotsToShow.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {screenshotsToShow.map((screenshot, index) => (
+                  <div key={index} className="rounded-lg overflow-hidden shadow-md bg-card flex items-center justify-center h-48">
+                    <ImageWithFallback
+                      src={screenshot}
+                      alt={`${project.title} スクリーンショット ${index + 1}`}
+                      className="max-h-full max-w-full object-contain p-2"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-muted-foreground">追加のスクリーンショットはありません。</p>
+            )}
           </CardContent>
         </Card>
 

@@ -6,11 +6,11 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
+    { name: "プロジェクト", href: "#projects" },
     { name: "自己紹介", href: "#about" },
     { name: "自己PR", href: "#selfpr" },
     { name: "インターン", href: "#intern" },
     { name: "経歴", href: "#experience" },
-    { name: "プロジェクト", href: "#projects" },
     { name: "お問い合わせ", href: "#contact" },
   ];
 
@@ -20,7 +20,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-foreground font-medium">崔 成雲</h1>
+            <h1 className="text-foreground font-medium">CHOI SEONGUN</h1>
           </div>
 
           {/* Desktop Navigation */}
